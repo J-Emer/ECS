@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-
 namespace ECS
 {
     public class Entity
@@ -50,6 +49,9 @@ namespace ECS
 
             return _copy;
         }
+        /// <summary>
+        /// Removes the Entity from the EntityWorld, and Calls the Destroy() for each component
+        /// </summary>
         public void Destroy()
         {
             for (int i = 0; i < Components.Count; i++)
@@ -59,6 +61,9 @@ namespace ECS
 
             EntityWorld.Instance.Remove(this);
         }
+        /// <summary>
+        /// Does this Entity have a Component of Type<T> on it
+        /// <summary>
         public bool HasComponent<T>() where T : Component
         {
             var _comp = Components.FirstOrDefault(x => x.GetType() == typeof(T));
@@ -70,6 +75,9 @@ namespace ECS
 
             return false;
         }
+        /// <summary>
+        /// Returns a Component<T>, returns null if there is no Component<T> on this Entity
+        /// <summary>
         public T GetComponent<T>() where T : Component
         {
             var _comp = Components.FirstOrDefault(x => x.GetType() == typeof(T));
