@@ -2,6 +2,8 @@
 
 This is a simple ECS that I use for my Monogame projects. Built aginst .net5.0, and Monogame OpenGl v3.8.0.1641
 
+ECS doesn't come with Components or Systems out of the box. You will have to build those yourself. Instead ECS provides a simple framework for you to build your systems and components off of. 
+
 ## Setup
 As of now there is no Nuget, so you will have to download and build yourself. Download the .zip, unpack and from the projects root run ```dotnet build``` this will build the ```.dll``` which you can reference in your project. 
 
